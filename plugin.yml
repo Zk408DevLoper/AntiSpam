@@ -1,0 +1,9 @@
+name: AntiSpam
+author: Skiddy2
+version: 1.0.0
+api: 2.0.0
+main: AntiSpam\AntiSpam
+
+permissions:
+  antispam.except:
+     default: op
