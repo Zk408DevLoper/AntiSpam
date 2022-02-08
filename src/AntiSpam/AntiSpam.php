@@ -28,7 +28,6 @@ class AntiSpam extends PluginBase implements Listener{
     	$p = $ev->getPlayer();
         if (isset($this->time[$p->getName()])){
                     if ($this->time[$p->getName()] <= time()){
-                        $this->time[$p->getName()] = time() + 3;
                     }else{
                         $time = $this->time[$p->getName()] - time();
                         $time = gmdate("s",$time);
@@ -39,7 +38,7 @@ class AntiSpam extends PluginBase implements Listener{
 				        if($p->hasPermission("antispam.except")){
 					        return;
 					    }
-				        $ev->setCancelled(true);
+				        $ev->setCancelled(!null);
                         $p->sendMessage("$msg");
                         return;
                     }
